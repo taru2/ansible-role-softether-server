@@ -1,6 +1,6 @@
 ---
 # tasks file for ansible-role-softether-server
-- include: buildtools.yml
+- include: install_buildtools.yml
 
 - name: setup tmp path
   file: path={{ softether_tmp_path }} state=directory
