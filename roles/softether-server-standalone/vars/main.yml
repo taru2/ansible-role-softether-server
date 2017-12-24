@@ -1,0 +1,35 @@
+---
+# vars file for ansible-role-softether-server
+
+# Look at this link for the latest:
+# http://www.softether-download.com/files/softether/
+# softther vpn server download link looks like this:
+# http://www.softether-download.com/files/softether/v4.21-9613-beta-2016.04.24-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.21-9613-beta-2016.04.24-linux-x64-64bit.tar.gz
+# take the string between softether-vpnservice- and -linux-x64... as the version string
+softether_version: "v4.24-9652-beta-2017.12.21"
+softether_package_file: "softether-vpnserver-{{ softether_version }}-linux-x64-64bit.tar.gz"
+softether_url: "http://www.softether-download.com/files/softether/{{ softether_version }}-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/{{ softether_package_file }}"
+softether_install_path: "{{ softether_install_prefix }}/vpnserver"
+
+softether_install_prefix: /usr/local
+softether_tmp_path: /tmp/vpnserver
+softether_force_build: false
+
+softether_hub_name: VPN
+softether_ipsec_psk: <MASK>
+softether_admin_current_password: ""
+softether_admin_new_password: <MASK>
+softether_hub_password: <MASK>
+
+softether_users:
+  - name: <MASK>
+    realname: <MASK>
+    group: <MASK>
+    password: <MASK>
+    note: <MASK>
+
+softether_enable_syslog: true
+softether_syslog_host: localhost
+softether_syslog_port: 514
+softether_rsyslog_conf_location: /etc/rsyslog.conf
+
